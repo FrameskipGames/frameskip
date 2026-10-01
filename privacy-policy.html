@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Privacy Policy - Frameskip</title>
+
+    <link rel="icon"
+        type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22DM Serif Display%22>F</text></svg>">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        :root {
+            --bg-gradient-start: #1f2937;
+            --bg-gradient-end: #111827;
+
+            --text-color: #e5e7eb;
+            --primary-color: #a5b4fc;
+            --secondary-color: #d1d5db;
+            --tertiary-color: #cbd5e1;
+
+            --link-color: #a5b4fc;
+
+            --separator-color: rgba(255, 255, 255, 0.1);
+
+            --card-bg: rgba(23, 30, 48, 0.65);
+            --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            --card-border: 1px solid rgba(255, 255, 255, 0.1);
+
+            --glow-color-start: #6366f1;
+            --glow-color-end: #818cf8;
+
+            --particle-bg:
+                radial-gradient(
+                    circle at center,
+                    rgba(255, 255, 255, 0.05) 0%,
+                    transparent 70%
+                );
+
+            --toggle-color: #cbd5e1;
+            --toggle-hover-color: #a5b4fc;
+        }
+
+
+        /* LIGHT THEME */
+
+        .light-theme {
+
+            --bg-gradient-start: #fdfbfb;
+            --bg-gradient-end: #f7f3f3;
+
+            --text-color: #5c524b;
+            --primary-color: #a0522d;
+            --secondary-color: #8b7d72;
+            --tertiary-color: #7a6e66;
+
+            --link-color: #a0522d;
+
+            --separator-color: rgba(0, 0, 0, 0.1);
+
+            --card-bg: #ffffff;
+            --card-shadow: 0 8px 20px rgba(92, 82, 75, 0.12);
+            --card-border: 1px solid rgba(0, 0, 0, 0.05);
+
+            --glow-color-start: #e9967a;
+            --glow-color-end: #f08080;
+
+            --particle-bg:
+                radial-gradient(
+                    circle at center,
+                    rgba(0, 0, 0, 0.01) 0%,
+                    transparent 70%
+                );
+
+            --toggle-color: #8b7d72;
+            --toggle-hover-color: #a0522d;
+        }
+
+
+        /* BASE */
+
+        html,
+        body {
+
+            margin: 0;
+            padding: 0;
+
+            min-height: 100%;
+
+            font-family: 'Nunito', sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--bg-gradient-start),
+                    var(--bg-gradient-end)
+                );
+
+            color: var(--text-color);
+
+            transition:
+                background 0.8s ease,
+                color 0.8s ease;
+
+        }
+
+
+        body {
+
+            padding: 2rem;
+
+            box-sizing: border-box;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* BACKGROUND PARTICLES */
+
+        .particles {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: var(--particle-bg);
+
+            pointer-events: none;
+
+            z-index: 0;
+
+            animation: pulse 8s ease-in-out infinite;
+
+        }
+
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.1;
+            }
+
+            50% {
+                opacity: 0.2;
+            }
+
+        }
+
+
+        /* MAIN CONTAINER */
+
+        .page-wrapper {
+
+            position: relative;
+
+            z-index: 1;
+
+            width: 100%;
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+        }
+
+
+        /* HEADER */
+
+        .header {
+
+            text-align: center;
+
+            margin-bottom: 2rem;
+
+        }
+
+
+        .logo {
+
+            font-size: 2.8rem;
+
+            font-weight: 700;
+
+            color: var(--primary-color);
+
+            text-shadow:
+                0 0 10px var(--glow-color-start);
+
+            margin-bottom: 0.5rem;
+
+        }
+
+
+        .page-title {
+
+            font-size: 2rem;
+
+            font-weight: 700;
+
+            margin: 0;
+
+            color: var(--text-color);
+
+        }
+
+
+        .last-updated {
+
+            margin-top: 0.5rem;
+
+            color: var(--secondary-color);
+
+            font-size: 0.9rem;
+
+        }
+
+
+        /* PRIVACY CARD */
+
+        .privacy-card {
+
+            background: var(--card-bg);
+
+            border-radius: 18px;
+
+            padding: 3rem;
+
+            box-shadow: var(--card-shadow);
+
+            border: var(--card-border);
+
+            backdrop-filter: blur(10px);
+
+            -webkit-backdrop-filter: blur(10px);
+
+            transition:
+                background 0.8s ease,
+                box-shadow 0.8s ease,
+                border 0.8s ease;
+
+        }
+
+
+        .light-theme .privacy-card {
+
+            backdrop-filter: none;
+
+            -webkit-backdrop-filter: none;
+
+        }
+
+
+        /* SECTIONS */
+
+        .privacy-section {
+
+            margin-bottom: 2rem;
+
+        }
+
+
+        .privacy-section:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+
+        h2 {
+
+            color: var(--primary-color);
+
+            font-size: 1.35rem;
+
+            margin-top: 0;
+
+            margin-bottom: 0.8rem;
+
+        }
+
+
+        p {
+
+            color: var(--tertiary-color);
+
+            font-size: 1rem;
+
+            line-height: 1.75;
+
+            margin-top: 0;
+
+            margin-bottom: 0.9rem;
+
+        }
+
+
+        ul {
+
+            color: var(--tertiary-color);
+
+            line-height: 1.8;
+
+            padding-left: 1.5rem;
+
+        }
+
+
+        li {
+
+            margin-bottom: 0.4rem;
+
+        }
+
+
+        strong {
+
+            color: var(--text-color);
+
+        }
+
+
+        a {
+
+            color: var(--link-color);
+
+            text-decoration: none;
+
+        }
+
+
+        a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* DIVIDER */
+
+        .divider {
+
+            height: 1px;
+
+            background: var(--separator-color);
+
+            margin: 2rem 0;
+
+        }
+
+
+        /* FOOTER */
+
+        .footer {
+
+            text-align: center;
+
+            margin-top: 2rem;
+
+            color: var(--secondary-color);
+
+            font-size: 0.9rem;
+
+        }
+
+
+        /* THEME BUTTON */
+
+        .theme-toggle {
+
+            position: fixed;
+
+            top: 1.5rem;
+
+            right: 1.5rem;
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background: transparent;
+
+            color: var(--toggle-color);
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 1.5rem;
+
+            transition:
+                color 0.3s ease,
+                transform 0.2s ease;
+
+            z-index: 5;
+
+        }
+
+
+        .theme-toggle:hover {
+
+            color: var(--toggle-hover-color);
+
+            transform: scale(1.1);
+
+        }
+
+
+        .theme-toggle svg {
+
+            position: absolute;
+
+            transition: opacity 0.4s ease;
+
+        }
+
+
+        .moon-icon {
+
+            opacity: 1;
+
+        }
+
+
+        .sun-icon {
+
+            opacity: 0;
+
+        }
+
+
+        .light-theme .moon-icon {
+
+            opacity: 0;
+
+        }
+
+
+        .light-theme .sun-icon {
+
+            opacity: 1;
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            body {
+
+                padding: 1rem;
+
+            }
+
+
+            .privacy-card {
+
+                padding: 1.5rem;
+
+            }
+
+
+            .logo {
+
+                font-size: 2.3rem;
+
+            }
+
+
+            .page-title {
+
+                font-size: 1.6rem;
+
+            }
+
+
+            h2 {
+
+                font-size: 1.2rem;
+
+            }
+
+
+            p,
+            ul {
+
+                font-size: 0.95rem;
+
+            }
+
+
+            .theme-toggle {
+
+                top: 1rem;
+
+                right: 1rem;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="particles"></div>
+
+
+    <!-- THEME BUTTON -->
+
+    <button
+        id="theme-toggle"
+        class="theme-toggle"
+        aria-label="Toggle theme">
+
+        <svg
+            class="moon-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+
+            <path d="M19 3v4"></path>
+
+            <path d="M21 5h-4"></path>
+
+        </svg>
+
+
+        <svg
+            class="sun-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <circle cx="12" cy="12" r="4"></circle>
+
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+
+        </svg>
+
+    </button>
+
+
+    <main class="page-wrapper">
+
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="logo">
+                Frameskip
+            </div>
+
+            <h1 class="page-title">
+                Privacy Policy
+            </h1>
+
+            <div class="last-updated">
+                Last Updated: October 1, 2026
+            </div>
+
+        </header>
+
+
+        <!-- POLICY -->
+
+        <article class="privacy-card">
+
+
+            <!-- 1 -->
+
+            <section class="privacy-section">
+
+                <h2>1. Introduction</h2>
+
+                <p>
+                    Frameskip ("we", "us", or "our") respects your privacy
+                    and is committed to protecting information associated
+                    with your use of our games and services.
+                </p>
+
+                <p>
+                    This Privacy Policy explains what information may be
+                    collected when you use a Frameskip game, how that
+                    information may be used, and how third-party services
+                    integrated into our games may process information.
+                </p>
+
+                <p>
+                    By downloading or using a Frameskip game, you
+                    acknowledge the practices described in this Privacy
+                    Policy.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 2 -->
+
+            <section class="privacy-section">
+
+                <h2>2. Information We Collect</h2>
+
+                <p>
+                    Our games do not require you to create an account or
+                    provide us directly with your name, email address,
+                    phone number, or similar contact information in order
+                    to play.
+                </p>
+
+                <p>
+                    However, our games and the third-party services
+                    integrated into them may automatically collect certain
+                    technical, advertising, diagnostic, and gameplay
+                    information.
+                </p>
+
+                <p>This may include:</p>
+
+                <ul>
+
+                    <li>Device type and model</li>
+
+                    <li>Operating system and version</li>
+
+                    <li>IP address</li>
+
+                    <li>Country or general geographic region</li>
+
+                    <li>Advertising identifiers</li>
+
+                    <li>Device or installation identifiers</li>
+
+                    <li>Game version</li>
+
+                    <li>Gameplay events and progress</li>
+
+                    <li>Session information</li>
+
+                    <li>Interactions with advertisements</li>
+
+                    <li>Diagnostic and crash information</li>
+
+                    <li>Performance information</li>
+
+                    <li>Information related to in-app purchases</li>
+
+                    <li>
+                        Achievement, leaderboard, or other gaming-service
+                        information
+                    </li>
+
+                </ul>
+
+                <p>
+                    The exact information collected may depend on the
+                    platform, device, services enabled, and your settings.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 3 -->
+
+            <section class="privacy-section">
+
+                <h2>3. How We Use Information</h2>
+
+                <p>
+                    We and our service providers may use collected
+                    information to:
+                </p>
+
+                <ul>
+
+                    <li>Operate and provide our games</li>
+
+                    <li>
+                        Save and maintain game progress where applicable
+                    </li>
+
+                    <li>
+                        Understand how players use our games
+                    </li>
+
+                    <li>
+                        Analyze game performance and player behavior
+                    </li>
+
+                    <li>
+                        Improve gameplay and game design
+                    </li>
+
+                    <li>
+                        Identify and fix bugs and technical problems
+                    </li>
+
+                    <li>
+                        Monitor crashes and performance
+                    </li>
+
+                    <li>
+                        Provide and measure advertisements
+                    </li>
+
+                    <li>
+                        Prevent fraud, abuse, and unauthorized activity
+                    </li>
+
+                    <li>
+                        Process and support in-app purchases
+                    </li>
+
+                    <li>
+                        Provide achievements, leaderboards, and other
+                        platform gaming features
+                    </li>
+
+                    <li>
+                        Maintain the security and functionality of our
+                        games
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 4 -->
+
+            <section class="privacy-section">
+
+                <h2>4. Analytics</h2>
+
+                <p>
+                    Our games may use <strong>GameAnalytics</strong> to
+                    collect and analyze gameplay and technical information.
+                </p>
+
+                <p>
+                    GameAnalytics may process information such as gameplay
+                    events, session information, device identifiers, and
+                    other information associated with gameplay.
+                </p>
+
+                <p>
+                    We use analytics information to understand how our
+                    games are being used, identify problems, measure
+                    performance, and improve our games.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 5 -->
+
+            <section class="privacy-section">
+
+                <h2>5. Advertising</h2>
+
+                <p>
+                    Our games may display advertisements provided by
+                    <strong>Google AdMob</strong>.
+                </p>
+
+                <p>
+                    AdMob and its associated software development kits may
+                    process information such as IP address, advertising
+                    identifiers, device or account identifiers, app
+                    interactions, advertising interactions, diagnostics,
+                    and performance information.
+                </p>
+
+                <p>
+                    This information may be used for advertising,
+                    measurement, fraud prevention, analytics, and related
+                    purposes.
+                </p>
+
+                <p>
+                    Advertising and privacy choices may depend on your
+                    device settings, platform, location, and applicable
+                    laws.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 6 -->
+
+            <section class="privacy-section">
+
+                <h2>6. In-App Purchases</h2>
+
+                <p>
+                    Our games may offer optional in-app purchases.
+                </p>
+
+                <p>
+                    Payments are processed through the applicable app
+                    store or payment platform, including Google Play,
+                    Apple's App Store, or Amazon Appstore.
+                </p>
+
+                <p>
+                    Frameskip does not directly receive or store your
+                    complete payment card, bank account, or other payment
+                    credentials through the game.
+                </p>
+
+                <p>
+                    The applicable app store may collect and process
+                    information necessary to complete and manage
+                    purchases according to its own privacy policy and
+                    terms.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 7 -->
+
+            <section class="privacy-section">
+
+                <h2>7. Google Play Games and Apple Game Center</h2>
+
+                <p>
+                    Our games may use platform gaming services such as
+                    <strong>Google Play Games</strong> and
+                    <strong>Apple Game Center</strong>.
+                </p>
+
+                <p>
+                    These services may provide features such as:
+                </p>
+
+                <ul>
+
+                    <li>Achievements</li>
+
+                    <li>Leaderboards</li>
+
+                    <li>Game progress</li>
+
+                    <li>Player profiles</li>
+
+                    <li>
+                        Other platform-specific gaming features
+                    </li>
+
+                </ul>
+
+                <p>
+                    These services may process information associated with
+                    your gaming account, gameplay, achievements, device,
+                    or other platform information.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 8 -->
+
+            <section class="privacy-section">
+
+                <h2>8. Unity Services</h2>
+
+                <p>
+                    Our games are developed using Unity and may use
+                    Unity services to provide certain functionality.
+                </p>
+
+                <p>
+                    Depending on the Unity services integrated into a
+                    particular game, Unity may process technical and
+                    device-related information such as device identifiers,
+                    IP address, device model, operating system, language,
+                    hardware information, advertising identifiers,
+                    application information, and gameplay or session
+                    information.
+                </p>
+
+                <p>
+                    The specific Unity services used by a game may vary.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 9 -->
+
+            <section class="privacy-section">
+
+                <h2>9. Location Information</h2>
+
+                <p>
+                    Our games do not intentionally request or collect your
+                    precise location.
+                </p>
+
+                <p>
+                    Some third-party services may be able to estimate a
+                    general geographic region from information such as an
+                    IP address.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 10 -->
+
+            <section class="privacy-section">
+
+                <h2>10. Children's Privacy</h2>
+
+                <p>
+                    Our games are intended for a general audience and are
+                    not specifically directed toward children.
+                </p>
+
+                <p>
+                    We do not knowingly request personal information
+                    directly from children.
+                </p>
+
+                <p>
+                    If you believe that a child has provided personal
+                    information to us in a manner that violates applicable
+                    law, please contact us using the contact information
+                    below.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 11 -->
+
+            <section class="privacy-section">
+
+                <h2>11. Third-Party Services</h2>
+
+                <p>
+                    Our games use third-party services that may process
+                    information to provide their services.
+                </p>
+
+                <p>
+                    These services may include:
+                </p>
+
+                <ul>
+
+                    <li>Google AdMob</li>
+
+                    <li>GameAnalytics</li>
+
+                    <li>Unity services</li>
+
+                    <li>Google Play Games</li>
+
+                    <li>Apple Game Center</li>
+
+                    <li>Google Play</li>
+
+                    <li>Apple App Store</li>
+
+                    <li>Amazon Appstore</li>
+
+                </ul>
+
+                <p>
+                    These providers may process information according to
+                    their own privacy policies and the services they
+                    provide.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 12 -->
+
+            <section class="privacy-section">
+
+                <h2>12. Data Sharing</h2>
+
+                <p>
+                    We may share or allow access to information through
+                    third-party service providers that help us operate,
+                    analyze, secure, and improve our games.
+                </p>
+
+                <p>
+                    We do not sell your name, email address, or other
+                    directly identifying information because our games do
+                    not require you to provide such information directly
+                    to us.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 13 -->
+
+            <section class="privacy-section">
+
+                <h2>13. Data Security</h2>
+
+                <p>
+                    We take reasonable technical and organizational
+                    measures to protect information processed through our
+                    games and services.
+                </p>
+
+                <p>
+                    However, no method of electronic transmission or
+                    storage can be guaranteed to be completely secure.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 14 -->
+
+            <section class="privacy-section">
+
+                <h2>14. Data Retention</h2>
+
+                <p>
+                    We retain information for as long as reasonably
+                    necessary for the purposes described in this Privacy
+                    Policy, including operating our games, analyzing
+                    performance, preventing fraud, complying with legal
+                    obligations, and resolving disputes.
+                </p>
+
+                <p>
+                    Third-party service providers may have their own data
+                    retention periods and policies.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 15 -->
+
+            <section class="privacy-section">
+
+                <h2>15. Your Privacy Rights</h2>
+
+                <p>
+                    Depending on where you live, you may have certain
+                    rights concerning your personal information. These
+                    may include:
+                </p>
+
+                <ul>
+
+                    <li>
+                        Requesting access to information associated with
+                        you
+                    </li>
+
+                    <li>
+                        Requesting correction of inaccurate information
+                    </li>
+
+                    <li>
+                        Requesting deletion of certain information
+                    </li>
+
+                    <li>
+                        Objecting to or restricting certain processing
+                    </li>
+
+                    <li>
+                        Withdrawing consent where processing is based on
+                        consent
+                    </li>
+
+                </ul>
+
+                <p>
+                    The availability of these rights depends on applicable
+                    privacy laws and the circumstances of the processing.
+                </p>
+
+                <p>
+                    To make a privacy-related request, please contact us
+                    using the information below. We may need to verify
+                    your request before fulfilling it.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 16 -->
+
+            <section class="privacy-section">
+
+                <h2>16. Changes to This Privacy Policy</h2>
+
+                <p>
+                    We may update this Privacy Policy from time to time to
+                    reflect changes to our games, services, technology, or
+                    legal requirements.
+                </p>
+
+                <p>
+                    When we make changes, we will update the
+                    <strong>"Last Updated"</strong> date at the top of
+                    this Privacy Policy.
+                </p>
+
+                <p>
+                    We encourage you to periodically review this Privacy
+                    Policy.
+                </p>
+
+            </section>
+
+
+            <div class="divider"></div>
+
+
+            <!-- 17 -->
+
+            <section class="privacy-section">
+
+                <h2>17. Contact Us</h2>
+
+                <p>
+                    If you have questions, concerns, or requests regarding
+                    this Privacy Policy or our privacy practices, please
+                    contact us:
+                </p>
+
+                <p>
+
+                    <strong>Frameskip</strong><br>
+
+                    Email:
+                    <a href="mailto:contact@frameskip.io">
+                        contact@frameskip.io
+                    </a>
+
+                </p>
+
+            </section>
+
+
+        </article>
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            © 2026 Frameskip. All rights reserved.
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- THEME SCRIPT -->
+
+    <script>
+
+        const themeToggle =
+            document.getElementById('theme-toggle');
+
+        const rootEl =
+            document.documentElement;
+
+
+        function setTheme(theme) {
+
+            if (theme === 'light') {
+
+                rootEl.classList.add('light-theme');
+
+                themeToggle.setAttribute(
+                    'aria-label',
+                    'Switch to dark theme'
+                );
+
+            } else {
+
+                rootEl.classList.remove('light-theme');
+
+                themeToggle.setAttribute(
+                    'aria-label',
+                    'Switch to light theme'
+                );
+
+            }
+
+            localStorage.setItem(
+                'theme',
+                theme
+            );
+
+        }
+
+
+        const savedTheme =
+            localStorage.getItem('theme') ||
+            (
+                window.matchMedia(
+                    '(prefers-color-scheme: light)'
+                ).matches
+                    ? 'light'
+                    : 'dark'
+            );
+
+
+        setTheme(savedTheme);
+
+
+        themeToggle.addEventListener(
+            'click',
+            () => {
+
+                const newTheme =
+                    rootEl.classList.contains('light-theme')
+                        ? 'dark'
+                        : 'light';
+
+                setTheme(newTheme);
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
