@@ -1,7 +1,7 @@
 /* ============================================================
    Frameskip Games — shared behaviour
-   1. Theme toggle (dark by default, choice remembered)
-   2. Table of contents for legal pages
+   1. Theme toggle (warm dark by default, choice remembered)
+   2. Table of contents for the legal pages
    ============================================================ */
 
 (function () {
@@ -13,17 +13,13 @@
 
     var toggle = document.getElementById('theme-toggle');
 
-    function labelFor(theme) {
-        return theme === 'light' ? 'Dark' : 'Light';
-    }
-
     function apply(theme) {
         document.documentElement.setAttribute('data-theme', theme);
 
         if (!toggle) return;
 
         var next = theme === 'light' ? 'dark' : 'light';
-        toggle.querySelector('.theme-toggle-label').textContent = labelFor(theme);
+        toggle.querySelector('.theme-toggle-label').textContent = next;
         toggle.setAttribute('aria-label', 'Switch to ' + next + ' theme');
     }
 
@@ -41,7 +37,7 @@
             try {
                 localStorage.setItem(STORAGE_KEY, theme);
             } catch (e) {
-                /* private browsing — the toggle still works for this visit */
+                /* private browsing — still works for this visit */
             }
         });
     }
@@ -61,10 +57,10 @@
 
             link.href = '#' + headings[i].parentNode.id;
 
-            /* Reuse the section's own zero-padded number so the contents
-               list and the headings always agree. */
+            /* Reuse the section's own number so the contents list and the
+               headings can never disagree. */
             link.textContent =
-                (num ? num.textContent.trim() + '  ' : '') +
+                (num ? num.textContent.trim() + '   ' : '') +
                 headings[i].textContent.replace(/^\s*[\d.]+\s*/, '');
 
             item.appendChild(link);

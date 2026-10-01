@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Frameskip Games — The games we'd want to play ourselves.</title>
-    <meta name="description" content="Frameskip Games is a four-person independent game studio making fun, fair mobile games — the kind we'd want to play ourselves.">
-    <meta name="theme-color" content="#0a0a0b">
+    <meta name="description" content="Frameskip Games is a small independent game studio making mobile games we'd want to play ourselves.">
+    <meta name="theme-color" content="#0f0f11">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Frameskip Games">
     <meta property="og:title" content="Frameskip Games">
-    <meta property="og:description" content="A four-person independent game studio making fun, fair mobile games.">
+    <meta property="og:description" content="A small independent game studio.">
     <meta property="og:url" content="https://frameskip.io/">
 
     <link rel="canonical" href="https://frameskip.io/">
@@ -20,7 +20,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
 
     <link rel="stylesheet" href="assets/styles.css">
 
@@ -35,17 +35,26 @@
     </script>
 </head>
 
+<!--
+    DEPLOYMENT NOTE
+    --------------
+    Pushes to main build automatically. The custom domain is NOT set by the
+    CNAME file alone — it must also be registered in repository settings:
+
+        Settings -> Pages -> Custom domain  ->  frameskip.io
+        Settings -> Pages -> Enforce HTTPS    ->  on
+
+    If https://frameskip.io/ shows GitHub's "Site not found" page while
+    https://frameskipgames.github.io/frameskip/ redirects to the apex, the
+    custom domain has not been registered. DNS already points at GitHub Pages.
+-->
+
 <body>
     <div class="shell">
 
-        <!-- ==================== Header ==================== -->
+        <!-- ==================== Top bar ==================== -->
 
-        <header class="site-head">
-            <a class="wordmark" href="index.html">
-                <span class="wordmark-mark" aria-hidden="true">//</span>
-                <span>Frameskip Games</span>
-            </a>
-
+        <header class="site-bar">
             <button
                 class="theme-toggle"
                 id="theme-toggle"
@@ -64,12 +73,10 @@
             <section class="hero">
                 <p class="eyebrow">Independent game studio</p>
 
-                <h1 class="hero-title">The games we'd want to play ourselves.</h1>
+                <h1 class="hero-title">Frameskip Games</h1>
 
-                <p class="hero-about">
-                    We're four friends making small, generous games for phones.
-                    We care about fair monetisation, a light touch on your data,
-                    and games that respect your time.
+                <p class="hero-subtext">
+                    The games we'd want to play ourselves.
                 </p>
             </section>
 
@@ -81,45 +88,61 @@
                 <!--
                     ADDING A GAME
                     ----------------
-                    Copy a <li class="game-row"> block, bump the index number,
-                    and fill in the title, description and tags. Keep the index
-                    numbers sequential and zero-padded to two digits.
+                    Copy a whole <article class="card"> block and bump the tone
+                    class (.card-art--1 .. --4) so neighbours stay distinct.
 
-                    Available tag modifiers:
-                      .tag          neutral  (platforms, categories)
-                      .tag-accent   accent   (status, e.g. "Coming soon")
+                    Cover art: drop a file at
+                        assets/games/<slug>/cover.png
+                    and point the <img> src at it. Until that file exists the
+                    tinted fallback (tone + initials) shows instead, so a card
+                    is never broken.
 
-                    Add <p class="game-note"> for a short dated line under the
-                    description if the game needs a timeline.
+                    Tags:
+                      .tag          neutral  — platforms, categories
+                      .tag-accent   accent   — status, e.g. "Coming soon"
+
+                    The grid is repeat(auto-fill, minmax(...)), so it reflows
+                    for you no matter how many cards you add.
                 -->
 
-                <ul class="game-list">
+                <div class="game-grid">
 
-                    <li class="game-row">
-                        <span class="game-index">01</span>
-
-                        <h3 class="game-title">Merge Kitchen</h3>
-
-                        <div class="game-meta">
-                            <span class="tag">Mobile</span>
-                            <span class="tag tag-accent">Coming soon</span>
+                    <article class="card">
+                        <div class="card-art card-art--1">
+                            <span class="card-art-fallback" aria-hidden="true">MK</span>
+                            <img
+                                src="assets/games/merge-kitchen/cover.png"
+                                alt=""
+                                loading="lazy"
+                                onerror="this.remove()"
+                            >
                         </div>
 
-                        <p class="game-desc">
-                            Drop ingredients to combine them into dishes, then
-                            serve customers before the timers run out. Satisfying
-                            food merging, a bit of multitasking, and casual
-                            restaurant management.
-                        </p>
+                        <div class="card-body">
+                            <h3 class="card-title">Merge Kitchen</h3>
 
-                        <p class="game-note">Launching in roughly two months.</p>
-                    </li>
+                            <p class="card-desc">
+                                Drop ingredients to combine them into dishes, then
+                                serve customers before the timers run out.
+                            </p>
 
-                    <li class="game-row game-row-empty">
-                        <span>More games on the way.</span>
-                    </li>
+                            <div class="card-meta">
+                                <span class="tag">Mobile</span>
+                                <span class="tag tag-accent">Coming soon</span>
+                            </div>
+                        </div>
+                    </article>
 
-                </ul>
+                    <article class="card card--empty">
+                        <div class="card-art" aria-hidden="true"></div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Next up</h3>
+                            <p class="card-desc">More games in the works.</p>
+                        </div>
+                    </article>
+
+                </div>
             </section>
         </main>
 
@@ -135,7 +158,9 @@
                 <a href="mailto:contact@frameskip.io">contact@frameskip.io</a>
             </p>
 
-            <p class="foot-copy">&copy; 2026 Frameskip Games. All rights reserved.</p>
+            <p class="foot-copy">
+                &copy; 2026 Frameskip Games. All rights reserved.
+            </p>
         </footer>
 
     </div>
